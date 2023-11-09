@@ -6,7 +6,7 @@ import { AuthContext } from '../../contexts/AuthContext'
 function Navbar() {
 
     const navigate = useNavigate()
-    const { handleLogout} = useContext(AuthContext)
+    const { handleLogout } = useContext(AuthContext)
 
     function logout() {
         handleLogout()
@@ -25,6 +25,8 @@ function Navbar() {
 
                     <div className='flex gap-4'>
                         Postagens
+                        <Link to='/temas' className='hover:underline'>Temas</Link>
+                        <Link to='/cadastroTema' className='hover:underline'>Cadastrar Tema</Link>
                         Temas
                         Cadastrar tema
                         Perfil
