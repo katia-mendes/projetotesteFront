@@ -38,16 +38,16 @@ function Login() {
             <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold">
                 <form className="flex justify-center items-center flex-col w-1/2 gap-4"
                     onSubmit={login}>
-                    <h2 className="text-violet-900 text-5xl ">Entrar</h2>
+                    <h2 className="text-violet-950 text-5xl ">Entrar</h2>
                     <div className="flex flex-col w-full">
-                        <label htmlFor="emailUsuario" className="text-violet-900">Usuário</label>
+                        <label htmlFor="usuario" className="text-violet-900">Usuário</label>
                         <input
                             type="text"
-                            id="emailUsuario"
-                            name="emailUsuario"
-                            placeholder="Usuario"
+                            id="usuario"
+                            name="usuario"
+                            placeholder="usuario"
                             className="border-2 border-violet-400 rounded p-2"
-                            value={usuarioLogin.emailUsuario}
+                            value={usuarioLogin.usuario}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
@@ -79,9 +79,9 @@ function Login() {
 
                     <hr className="border-slate-800 w-full" />
 
-                    <p>
-                        Não tem uma conta?{' '}
-                        <Link to="/cadastro" className="text-indigo-800 hover:underline">
+                    <p className="flex">
+                        <p className="px-1 text-violet-950">Não tem uma conta?{' '}</p>
+                        <Link to="/cadastro" className="text-violet-500 hover:no-underline">
                             Cadastre-se
                         </Link>
                     </p>
