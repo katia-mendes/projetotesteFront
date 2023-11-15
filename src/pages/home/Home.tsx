@@ -1,5 +1,7 @@
-function Home() {
+import ListaPostagens from "../../components/postagens/listaPostagens/ListaPostagens"
+import ModalPostagem from "../../components/postagens/modalPostagem/ModalPostagem"
 
+function Home() {
     return (
         <>
             <div className="bg-indigo-900 flex justify-center">
@@ -13,23 +15,23 @@ function Home() {
                         </p>
 
                         <div className="flex justify-around gap-4">
-                            <div className='rounded text-white 
-                                            border-white border-solid border-2 py-2 px-4'
-                                >
-                                Nova Postagem
+                            <div className="flex justify-around gap-4">
+                                <ModalPostagem />
                             </div>
                         </div>
                     </div>
 
                     <div className="flex justify-center ">
                         <img
-                            src="https://i.pinimg.com/564x/5c/6f/d2/5c6fd28111d73fe275fe56f9882f5d8b.jpg"
-                            alt="Imagem Página Home"
+                             src="https://i.pinimg.com/564x/5c/6f/d2/5c6fd28111d73fe275fe56f9882f5d8b.jpg"
+                             alt="Imagem Página Home"
                             className='w-2/3'
                         />
                     </div>
                 </div>
             </div>
+
+            <ListaPostagens />
         </>
     )
 }
