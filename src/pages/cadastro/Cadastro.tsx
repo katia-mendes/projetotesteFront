@@ -1,9 +1,9 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import { RotatingLines } from 'react-loader-spinner'
 import { useNavigate } from 'react-router-dom'
+
 import { toastAlerta } from '../../utils/toastAlerta'
 import { cadastrarUsuario } from '../../services/Service'
-import UsuarioLogin from '../../models/UsuarioLogin'
 import Usuario from '../../models/Usuario'
 import './Cadastro.css'
 
@@ -45,26 +45,26 @@ function Cadastro() {
     async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>) {
         e.preventDefault()
 
-        if (confirmarSenha === usuario.senha && usuario.senha.length >= 8) {
+        if(confirmarSenha === usuario.senha && usuario.senha.length >= 8) {
             setIsLoading(true)
 
             try {
                 await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario)
                 toastAlerta('Usuário cadastrado com sucesso', "sucesso")
-
-            } catch (error) {
+            }catch (error) {
                 toastAlerta('Erro ao cadastrar o Usuário', "erro")
             }
-
-        } else {
+        }else {
             toastAlerta('Erro ao cadastrar o Usuário', "erro")
-            setUsuario({ ...usuario, senha: "" })
+            setUsuario({...usuario, senha: ""})
             setConfirmarSenha("")
         }
 
         setIsLoading(false)
     }
-    
+
+
+
     return (
         <>
             <div className='grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold'>
