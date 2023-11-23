@@ -40,7 +40,7 @@ function Login() {
                     onSubmit={login}>
                     <h2 className="text-violet-950 text-5xl ">Entrar</h2>
                     <div className="flex flex-col w-full">
-                        <label htmlFor="usuario" className="text-violet-900">Usuário</label>
+                        <label htmlFor="usuario">Usuário</label>
                         <input
                             type="text"
                             id="usuario"
